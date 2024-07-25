@@ -2,6 +2,116 @@
 @tailwind components;
 @tailwind utilities;
 
+.element {
+  transition: transform 0.3s ease-in-out;
+  overflow: auto; /* Allow scrolling */
+  scrollbar-width: none; /* For Firefox */
+  -ms-overflow-style: none; /* For Internet Explorer and Edge */
+}
+
+.element::-webkit-scrollbar {
+  display: none; /* For Chrome, Safari, and Opera */
+}
+
+@media (max-width: 1000px) {
+  .element {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .question-page-container {
+    flex-direction: column; /* Stack children vertically */
+  }
+
+  .answer-analysis {
+    width: 100% !important; /* Make AnswerAnalysis take full width */
+    position: static; /* Reset position */
+    margin-top: 16px; /* Add margin for spacing */
+  }
+
+  .question-page {
+    width: 100% !important; /* Make QuestionPage take full width */
+  }
+}
+
+/* Styles for screens larger than 1000px */
+@media (min-width: 1001px) {
+  .answer-analysis {
+    position: fixed; /* Keep AnswerAnalysis fixed on larger screens */
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 30%;
+    transition: transform 0.3s ease;
+  }
+
+  .question-page {
+    flex: 1;
+    margin-right: 30%; /* Reserve space for AnswerAnalysis */
+  }
+}
+
+.custom-icon-container {
+  background-color: #5B6BE1; 
+  border: 2px solid white; 
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+}
+
+.custom-icon {
+  color: white;
+  font-size: 10px;
+}
+
+body {
+  font-family: 'Euclid Circular B', sans-serif;
+}
+
+.group:hover .group-hover\:inline-block {
+  display: inline-block;
+}
+
+.group:hover .group-hover\:hidden {
+  display: none;
+}
+
+.relative {
+  margin-left: 16px; 
+}
+
+.transition-transform {
+  margin-right: 16px;
+}
+
+.flex-1 {
+  gap: 16px; 
+}
+
+.space-y-2 > * + * {
+  margin-top: 0.5rem;
+}
+
+.mb-2 {
+  margin-bottom: 0.5rem; 
+}
+
+.mb-4 {
+  margin-bottom: 1rem; 
+}
+
+.mb-8 {
+  margin-bottom: 2rem; 
+}
+
+.leading-[40px] {
+  line-height: 2.5rem;
+}
+
+
 .underline{
   text-decoration: underline;
   text-decoration-color: red;
@@ -17,3 +127,6 @@
   text-decoration-color: violet;
 }
 
+body {
+  font-family: 'Euclid Circular B', sans-serif;
+}
